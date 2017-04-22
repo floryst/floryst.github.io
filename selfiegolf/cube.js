@@ -13,6 +13,23 @@ window.my_id = 0;
 init();
 animate();
 
+function connect() {
+    // connect to server
+    conn = new autobahn.Connection({
+        url: 'ws://' + document.querySelector('#server').value + "/ws",
+        realm: 'golf_course'
+    });
+
+    conn.onopen = connEstablished;
+    conn.onclose = function(reason, msg) {
+        if (reason == 'unreachable' || reason='unsupported')
+            alert(reason);
+    }
+
+    conn.open();
+
+}
+
 function updateid() {
     window.my_id = document.getElementById('my_id').value;
     if (window.otherballs[window.my_id] != undefined) {
@@ -165,16 +182,6 @@ function init() {
     renderer.setClearColor( 0xffffff, 1 );
 
     document.body.appendChild( renderer.domElement );
-
-    // connect to server
-    conn = new autobahn.Connection({
-        url: 'ws://' + location.hostname + ":8000/ws",
-        realm: 'golf_course'
-    });
-
-    conn.onopen = connEstablished;
-
-    conn.open();
 }
 
 function animate() {
