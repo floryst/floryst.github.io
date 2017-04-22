@@ -22,7 +22,7 @@ function connect() {
 
     conn.onopen = connEstablished;
     conn.onclose = function(reason, msg) {
-        if (reason == 'unreachable' || reason='unsupported')
+        if (reason == 'unreachable' || reason == 'unsupported')
             alert(reason);
     }
 
