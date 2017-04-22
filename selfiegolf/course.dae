@@ -3260,7 +3260,7 @@
         <material id="ID407" name="Grass_Light_Green">
             <instance_effect url="#ID408" />
         </material>
-        <material id="ID428" name="__Concrete_Block_Retaining_Gray_1">
+        <material id="ID428" name="Concrete_Block_Retaining_Gray_1">
             <instance_effect url="#ID429" />
         </material>
         <material id="ID465" name="Concrete_Stamped_Ashlar">
@@ -3705,7 +3705,7 @@
             <init_from>course/Grass_Light_Green.jpg</init_from>
         </image>
         <image id="ID430">
-            <init_from>course/__Concrete_Block_Retaining_Gray_1.jpg</init_from>
+            <init_from>course/Concrete_Block_Retaining_Gray_1.jpg</init_from>
         </image>
         <image id="ID467">
             <init_from>course/Concrete_Stamped_Ashlar.jpg</init_from>
