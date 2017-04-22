@@ -23,40 +23,65 @@ body > a {
 	height: 10em;
 	line-height: 10em;
 	text-align: center;
-	background-color: #7ab3c2;
 	opacity: 0.75;
 	transition: opacity 0.2s ease;
 	margin: 10px;
 	text-decoration: none;
 	outline: none;
+	position: relative;
+	color: black;
 }
 body > a:hover {
 	opacity: 1.0;
 }
-body > a > p {
-	color: black;
+body a p {
 	vertical-align: middle;
 	font-weight: bold;
+	/* these two allow vertical centering multiline text */
+	display: inline-block;
+	line-height: 1em;
 }
-#header {
-	padding-bottom: 10px;
+hr {
+	border: none;
+	border-top: 1px solid #999;
+	margin-left: 0.5em;
 }
-#header > p:nth-child(1) {
-	font-size: 2.0em;
-	font-weight: bold;
-}
-#header > p:nth-child(2) {
+.subtext {
 	color: #444;
 	font-size: 1.25em;
 	margin-left: 1.0em;
+	display: block;
 }
+.snip {
+	color: #444;
+	margin-left: 0.5em;
+	padding-top: 5px;
+}
+#selfiegolf { background: no-repeat center/cover url('selfiegolf.png'); color: #ddd; }
+#github { background-color: #7ab3c2; }
+#linkedin { background-color: #d98888; }
+#hgreer { background-color: #314159; color: #bbb; }
+#subdavis { background-color: #269f11; }
+#header { padding-bottom: 10px; }
+#header > p:nth-child(1) { font-size: 2.0em; font-weight: bold; }
+#header > p:nth-child(3) > span:nth-child(2) { font-size: 0.00000005437563px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+#header > p:nth-child(3) > span:nth-child(1) > span:nth-child(1) { font-size: 0.003em; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+#header > p:nth-child(3) > span:nth-child(3) > span:nth-child(2) { font-size: 0.00031415%; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 		</style>
 	</head>
 	<body>
 		<div id="header">
 			<p>Hi! I'm Forrest!</p>
-			<p>&#x21B3 The squares are clickable (and edible).</p>
+			<p class="subtext">&#x21B3 Things I do may end up here.</p>
+			<p class="subtext">&#x21B3 Contact info? You can reach me at: <span>forre<span> TAKE.ME.OUT </span>st@<span>fo</span></span><span>-YOU.BETTER.ME.OUT.TOO-</span><span><span>rre</span>stli.<span>localtoast.</span></span>com</span></p>
 		</div>
-		<a href="https://github.com/floryst"><p>Github</p></a>
+		<a id="selfiegolf" href="selfiegolf/index.html"><p>Selfie Golf (renderer)</p></a>
+		<hr />
+		<a id="github" href="https://github.com/floryst"><p>Github</p></a>
+		<a id="linkedin" href="https://www.linkedin.com/in/forrestli/"><p>LinkedIn</p></a>
+		<hr />
+		<p class="snip">Helping build the web, one link at a time.</p>
+		<a id="hgreer" href="http://hgreer.com/"><p>Hastings</p></a>
+		<a id="subdavis" href="http://subdavis.com/"><p>Brandon</p></a>
 	</body>
 </html>
