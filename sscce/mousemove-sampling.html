@@ -1,0 +1,61 @@
+<!doctype html5>
+<html>
+  <head>
+<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+}
+</style>
+  </head>
+  <body style="display: flex; flex-flow: column;">
+    <div>Left mouse press, drag in the blank space below, and release to draw your points.</div>
+    <div><input type="checkbox" /> Draw lines</div>
+    <div style="flex: 1 1 auto"><canvas></canvas></div>
+    <script type="text/javascript">
+const input = document.querySelector('input');
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = canvas.parentNode.offsetWidth;
+canvas.height = canvas.parentNode.offsetHeight;
+
+const w = 2;
+const h = 2;
+
+const points = [];
+
+let drag = false;
+
+canvas.addEventListener('mousedown', () => {
+  drag = true;
+  points.length = 0;
+});
+
+canvas.addEventListener('mousemove', (ev) => {
+  points.push([ev.offsetX, ev.offsetY]);
+});
+
+canvas.addEventListener('mouseup', () => {
+  drag = false;
+  const wd2 = w / 2;
+  const hd2 = h / 2;
+  if (points.length >= 2) {
+    for (let i = 0; i < points.length - 1; i++) {
+      const [x, y] = points[i];
+      const [nx, ny] = points[i + 1];
+
+      if (input.checked) {
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(nx, ny);
+        ctx.stroke();
+      } else {
+        ctx.fillRect(x - wd2, y - hd2, w, h);
+      }
+    }
+  }
+});
+    </script>
+  </body>
+</html>
